@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>51실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 3000px;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        transition: 1s;
+      }
+      .on {
+        color: #fff;
+        background: #222;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>글자</div>
+    <script>
+      $(window).on("scroll", function () {
+        let sc = $(this).scrollTop();
+        if (sc >= 200 && sc <= 500) {
+          $("div").addClass("on");
+        } else {
+          $("div").removeClass("on");
+        }
+      });
+    </script>
+  </body>
+</html>

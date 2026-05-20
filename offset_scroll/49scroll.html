@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scroll</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 3000px;
+      }
+
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">box</div>
+    <script>
+      // $(window).on("scroll", function () {
+      //   pos = $(this).scrollTop();
+      //   if (pos >= 300) {
+      //     console.log("이동");
+      //     $("body").css({ background: "#ccc" });
+      //   }
+      // });
+      $(window).on("scroll", function () {
+        pos = $(this).scrollTop();
+        if (pos >= 300) {
+          console.log("이동");
+          $(".box").css({ background: "#ccc" });
+        }
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+scrollTop()  :: 수직 스크롤바 위치를 알수 있음
+선택자는 window
+이벤트는 scroll
+
+문제) 박스를 움직이면 색깔이 변하게
+문제) 스크롤하면 박스가 따라 올라오게 
+-->

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>offset</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        /* margin: 50px; */
+      }
+      .box2 {
+        position: absolute;
+        left: 200px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <script>
+      let box1 = $(".box1").offset().top;
+      console.log(box1);
+
+      let box2 = $(".box2").offset().left;
+      console.log(box2);
+    </script>
+  </body>
+</html>
+<!-- 
+.offset().top :: 선택자의 y축 위치를 알아내고자 할때 사용
+body의 0,0지점을 기준으로 선택자가 위치하고 있는 y축 거리를 알 수 있음
+
+.offset().left :: 선택자의 x축 위치를 알아내고자 할때 사용
+
+-->

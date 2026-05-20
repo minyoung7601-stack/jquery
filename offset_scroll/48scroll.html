@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scroll</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 3000px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      $(window).on("scroll", function () {
+        pos = $(this).scrollTop();
+        console.log(pos);
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+scrollTop()  :: 수직 스크롤바 위치를 알수 있음
+선택자는 window
+이벤트는 scroll
+-->
