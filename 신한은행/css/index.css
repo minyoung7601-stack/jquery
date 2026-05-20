@@ -1,0 +1,174 @@
+/* 페이드인 페이드아웃 이용 */
+/* visual */
+#visual {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#visual .panel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.panel .bg1 {
+  background-image: url(../img/main_visual1.jpg);
+  display: block;
+  /* 이미지가 겹치면 마지막 이미지가 보이기 때문에 첫번째 이미지에 display: block; 해준다. */
+}
+.panel .bg2 {
+  background-image: url(../img/main_visual2.jpg);
+}
+.panel .bg3 {
+  background-image: url(../img/main_visual3.jpg);
+}
+
+.panel li {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none; /* 제이쿼리 fadeIn/Out용 */
+  transform: scale(2);
+  transition-duration: 1s;
+  transition-delay: 0.5s;
+}
+
+.panel li.on {
+  transform: scale(1);
+}
+/* txt_wrap */
+.txt_wrap {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  width: 80%;
+  z-index: 10;
+}
+.txt {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* 전체 레이아웃 너비에 맞게 조절 */
+  margin: 0 auto;
+}
+.txt > li {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 1;
+  width: 100%;
+  display: none; /* 기본적으로 숨김 (제이쿼리 fadeIn용) */
+}
+.txt > li:first-child {
+  display: block;
+}
+.txt h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+.txt h2 span {
+  color: #0000ff;
+}
+.txt p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin: 20px 0px;
+}
+
+/* 컨트롤러 (하단 바) */
+.control {
+  display: flex;
+  gap: 1rem;
+  margin-top: 250px;
+  align-items: center;
+}
+
+/* progress_bar(게이지 바 */
+.progress_bar {
+  display: flex;
+  gap: 10px;
+}
+.progress_bar li {
+  width: 50px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  position: relative; /*내부 div의 기준점 */
+  overflow: hidden;
+}
+
+/* 현재 진행 중인 바의 하이라이트 */
+.progress_bar li.active {
+  background-color: rgba(255, 255, 255, 0.3); /* 배경은 유지 */
+}
+/* 게이지 바 내부의 움직이는 선 */
+.progress_bar li div {
+  width: 0%;
+  height: 100%;
+  background-color: #fff; /* 활성화될 때 차오르는 흰색 선 */
+}
+/* 재생/일시정지 버튼 */
+.play_bar img {
+  cursor: pointer;
+}
+.play_bar img.on {
+  display: block; /* 'on' 클래스 붙은 버튼만 보임 */
+}
+.play_bar .pause {
+}
+.play_bar .play {
+  display: none;
+}
+.control .prev,
+.control .next {
+  cursor: pointer;
+}
+
+/* 오른쪽 하단 스크롤바 */
+.scroll {
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
+  display: flex;
+  gap: 20px;
+}
+.scroll p {
+  color: #fff;
+}
+.bar {
+  width: 6px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}
+.circle {
+  width: 100%;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: move 2s infinite;
+}
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
