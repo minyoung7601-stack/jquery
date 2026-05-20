@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>모달창</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .content {
+        width: 70%;
+        height: 100vh;
+        border: 1px solid red;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .content .txt {
+        border: 1px solid #ccc;
+        padding: 1rem;
+        border-radius: 0.8rem;
+        line-height: 2rem;
+      }
+      .content #open {
+        background-color: orange;
+        color: #fff;
+        padding: 0.7rem;
+        border-radius: 0.7rem;
+        margin-top: 2rem;
+      }
+      /* modalBox */
+      .modalBox {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        /* 프로필보기를 클릭하면 modalBox 보이게 제이쿼리에서  */
+      }
+      .on {
+        display: flex;
+        /* .on 클릭하면 modalBox 보이게 */
+      }
+      .modalBox .modalContent {
+        background-color: #fff;
+        width: 70%;
+        position: relative;
+        padding: 1rem;
+        /* 전체적으로 여백. 공통으로 여백주는것은 순서 바뀌면 안됨 */
+        padding-top: 2rem;
+      }
+      .modalBox .profile {
+        display: flex;
+        gap: 2rem;
+      }
+      #close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 2rem;
+        border: none;
+      }
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="txt">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+        ratione accusamus voluptate ullam quaerat a, aspernatur ipsam omnis amet
+        quia culpa autem rerum vitae cupiditate. Quasi voluptatem labore commodi
+        magni.
+      </div>
+      <button id="open">프로필보기</button>
+    </div>
+    <div class="modalBox">
+      <div class="modalContent">
+        <button id="close">X</button>
+        <h2>My Profile</h2>
+        <div class="profile">
+          <img src="img/avatar_hat.jpg" alt="" />
+          <div class="modalTxt">
+            <p>이름 : 김00</p>
+            <p>주소 : 인천 어쩌구</p>
+            <p>전화번호 : 010-123-1234</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $("#open").on("click", function () {
+        $(".modalBox").addClass("on");
+      });
+      $("#close").on("click", function () {
+        $(".modalBox").removeClass("on");
+      });
+    </script>
+  </body>
+</html>
