@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 400px;
+        margin: 50px auto;
+        perspective: 800px; /* 3d현상(원근감).  값이 작아지면 회전 크기가 커짐.  커질수록 멀리서 본것 같음*/
+      }
+      .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d; /* 자식요소 회전*/
+        transition: 1s;
+      }
+      .card > div {
+        width: 200px;
+        height: 400px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .front {
+        background-color: lightblue;
+        z-index: 10;
+        backface-visibility: hidden; /* 뒷면 숨기기*/
+      }
+      .back {
+        background-color: lightpink;
+        transform: rotateY(
+          180deg
+        ); /* 뒷면 글씨 뒤집어져서 보이므로 다시 180도 회전함 */
+      }
+      .on {
+        transform: rotateY(180deg);
+      }
+      .card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrap">
+        <div class="card">
+          <div class="front">앞면</div>
+
+          <div class="back">
+            <img src="img/pic1.jpg" alt="" class="card-img" />
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="card">
+          <div class="front">앞면</div>
+
+          <div class="back">
+            <img src="img/pic2.jpg" alt="" class="card-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(".card").on("click", function () {
+        $(this).toggleClass("on");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+/* 가로스크롤바 없애기 위해 */
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/*container*/
+#container {
+  width: 1200px;
+  height: 400px;
+  margin: 200px auto;
+  display: flex;
+  border: 1px solid red;
+}
+
+/*layout*/
+#container .left {
+  width: 30%;
+}
+#container .right {
+  width: 70%;
+  /* background-color: #ccc; */
+  position: relative;
+}
+
+/*left*/
+#container .left {
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 2rem;
+}
+/*left h2*/
+#container .left h2 {
+  margin-bottom: 2rem;
+}
+
+/*left ul*/
+#container .left ul {
+  width: 100%;
+}
+
+#container .left ul li {
+  width: 100%;
+  border-bottom: 1px solid #666;
+}
+#container .left ul li a {
+  width: 100%;
+  padding: 1rem;
+  display: inline-block;
+  transition: 0.5s ease-in-out;
+}
+#container .left ul li.on a {
+  background-color: #000;
+  color: orange;
+  padding-left: 1.5rem;
+}
+
+/*right section*/
+#container .right section {
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+}
+#container .right section.on {
+  display: block;
+}
+
+/*right bg*/
+#container .right #tab01 {
+  background-color: lightgreen;
+}
+#container .right #tab02 {
+  background-color: lightblue;
+}
+#container .right #tab03 {
+  background-color: lightpink;
+}
+#container .right #tab04 {
+  background-color: lightyellow;
+}
+
+/*right txt*/
+#container .right section .txt {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/*right h3*/
+#container .right section h3 {
+  font-size: 5rem;
+  color: #999;
+  letter-spacing: 0.5rem;
+  margin-left: 4rem;
+  transition: 0.5s ease-in-out;
+}
+
+#container .right section.on h3 {
+  margin-left: 1rem;
+}
+
+/*.right p*/
+#container .right section p {
+  color: #999;
+  line-height: 1.8rem;
+  margin-top: 1rem;
+  margin-left: 4rem;
+  transition: 0.5s;
+}
+#container .right section.on p {
+  margin-left: 1rem;
+}
+
+/*.right h4*/
+#container .right section h4 {
+  position: absolute;
+  right: -100px;
+  bottom: -100px;
+  font-size: 15rem;
+  color: rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+#container .right section.on h4 {
+  right: 2rem;
+}
+
+/*.right img*/
+#container .right section img {
+  position: absolute;
+  right: -100px;
+  top: -300px;
+  transition: 0.5s;
+}
+
+/*img 움직임*/
+#tab01 img {
+  transform: scale(1.5) rotate(0deg);
+}
+#tab01.on img {
+  transform: scale(1) rotate(360deg);
+}
+
+#tab02 img {
+  transform: scale(2);
+  right: -300px;
+  opacity: 0;
+}
+#tab02.on img {
+  transform: scale(1);
+  right: -100px;
+  opacity: 1;
+}
+#tab03 img {
+  top: -600px;
+  right: -300px;
+  opacity: 0;
+}
+#tab03.on img {
+  top: -300px;
+  right: -100px;
+  opacity: 1;
+}
+#tab04 img {
+  transform: scale(1.5) rotate(0deg);
+  top: -600px;
+  right: -300px;
+  opacity: 0;
+}
+#tab04.on img {
+  transform: scale(1) rotate(360deg);
+  top: -300px;
+  right: -100px;
+  opacity: 1;
+}

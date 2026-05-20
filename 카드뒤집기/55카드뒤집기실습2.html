@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>카드뒤집기 - 이미지 버전</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 200px;
+        height: 300px; /* 디저트 이미지에 맞게 세로 크기를 조절했습니다 */
+        margin: 50px auto;
+        perspective: 800px;
+      }
+      .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: 1s;
+        cursor: pointer; /* 클릭 가능하다는 표시 */
+      }
+      .card > div {
+        width: 100%; /* 부모의 크기를 따라가도록 수정 */
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px; /* 카페 느낌: 둥근 모서리 */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 카페 느낌: 부드러운 그림자 */
+        overflow: hidden; /* 이미지가 영역을 벗어나지 않게 함 */
+      }
+      .front {
+        background-color: #ffedaf; /* 카페 느낌: 버터 옐로우 */
+        color: #8d6e63;
+        font-weight: bold;
+        font-size: 1.2rem;
+        z-index: 10;
+        backface-visibility: hidden;
+      }
+      .back {
+        background-color: white; /* 이미지가 돋보이게 흰색 배경 */
+        transform: rotateY(180deg);
+      }
+      /* 카드 내부 이미지 스타일 */
+      .card-img {
+        width: 100%; /* 카드의 너비에 맞춤 */
+        height: 100%; /* 카드의 높이에 맞춤 */
+        object-fit: cover; /* 이미지가 비율을 유지하며 꽉 차게 함 */
+      }
+      .on {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="front">Today's Dessert</div>
+        <div class="back">
+          <img
+            src="https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=400"
+            alt="조각 케이크"
+            class="card-img"
+          />
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function () {
+        $(".wrap").on("click", function () {
+          $(".card").toggleClass("on");
+        });
+      });
+    </script>
+  </body>
+</html>
