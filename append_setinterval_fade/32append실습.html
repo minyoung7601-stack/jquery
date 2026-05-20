@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>32append실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      ul {
+        width: 900px;
+        display: flex;
+        margin: 50px auto;
+      }
+      img {
+        width: 100%;
+      }
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><img src="img/pic1.jpg" /></li>
+      <li><img src="img/pic2.jpg" /></li>
+      <li><img src="img/pic3.jpg" /></li>
+    </ul>
+    <button id="prev">앞</button>
+    <button id="next">뒤</button>
+    <script>
+      $("#prev").on("click", function () {
+        $("li:last-child").prependTo("ul");
+      });
+
+      $("#next").on("click", function () {
+        $("li:first-child").appendTo("ul");
+      });
+    </script>
+  </body>
+</html>

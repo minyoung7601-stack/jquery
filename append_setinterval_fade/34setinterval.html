@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>34setInterval</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+  </head>
+  <body>
+    <button>멈춤</button>
+    <!-- <script>
+      let num = 0;
+      setInterval(function () {
+        num++;
+        console.log(num);
+      }, 2000);
+    </script> -->
+    <!-- <script>
+      let num = 0;
+      setInterval(function () {
+        if (num == 5) {
+          num = 1;
+        } else {
+          num++;
+        }
+        console.log(num);
+      }, 2000);
+    </script> -->
+    <script>
+      let num = 0;
+      let start = setInterval(function () {
+        if (num == 5) {
+          num = 1;
+        } else {
+          num++;
+        }
+
+        console.log(num);
+      }, 2000);
+
+      $("button").on("click", function () {
+        clearInterval(start);
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+setInterval()은 설정된 시간마다 반복하는 함수
+
+setInterval(funtion(){
+실행문
+}, 밀리초)
+
+clearInterval은 setInterval을 중지시킬 수 있음
+단, 중지를 하려면 setInterval을 변수에 넣음
+clearInterval(변수) : 변수에 담긴 것을 중지시킴
+
+변수 = setInterval(funtion(){
+실행문
+}, 밀리초)
+-->

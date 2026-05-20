@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>43이미지슬라이드</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .left {
+        left: 1rem;
+      }
+      .right {
+        right: 1rem;
+      }
+      .wrap {
+        width: 300px;
+        /* overflow: hidden; */
+        border: 1px solid red;
+        margin: 50px auto;
+        position: relative;
+      }
+      ul {
+        width: 900px;
+        display: flex;
+      }
+      img {
+        width: 100%;
+      }
+      a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul>
+        <li>
+          <img src="img/pic1.jpg" />
+        </li>
+        <li>
+          <img src="img/pic2.jpg" />
+        </li>
+        <li>
+          <img src="img/pic3.jpg" />
+        </li>
+      </ul>
+      <a class="left" href="#"><i class="fa-solid fa-arrow-left"></i></a>
+      <a class="right" href="#"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <script>
+      // 오른쪽 버튼 (이미 배운 로직)
+      $(".right").on("click", function () {
+        $("ul")
+          .stop()
+          .animate({ "margin-left": "-300px" }, function () {
+            $("li:first-child").appendTo("ul"); // 1번을 뒤로
+            $(this).css({ "margin-left": "0" }); // 위치 복구
+          });
+      });
+
+      // 왼쪽 버튼 (수정된 로직)
+      $(".left").on("click", function () {
+        // 1. 애니메이션 없이! 먼저 맨 뒤의 li를 떼서 맨 앞으로 보냅니다.
+        $("li:last-child").prependTo("ul");
+
+        // 2. 맨 앞에 새 칸이 들어왔으니 기차를 일단 -300px 지점으로 '순간이동' 시킵니다.
+        $("ul").css({ "margin-left": "-300px" });
+
+        // 3. 이제 0 지점으로 부드럽게 밀면, 왼쪽에서 이미지가 나오는 것처럼 보입니다.
+        $("ul").stop().animate({ "margin-left": "0" });
+      });
+    </script>
+  </body>
+</html>
+<!-- 문제) 왼쪽 화살표 버튼을 누르면 마지막 이미지가 앞으로 오게하기 -->

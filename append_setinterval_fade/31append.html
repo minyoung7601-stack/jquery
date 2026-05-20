@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>append</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+  </head>
+  <body>
+    <div>글자를 앞 또는 뒤에 추가</div>
+    <button id="pre">앞에 추가</button>
+    <button id="app">뒤에 추가</button>
+    <script>
+      $("#pre").on("click", function () {
+        $("<p>앞입니다</p>").prependTo("div");
+      });
+      $("#app").on("click", function () {
+        $("<p>뒤입니다</p>").appendTo("div");
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+- prepend(): 선택한 요소 앞에 내용을 추가
+- append() : 선택한 요소 뒤에 내용을 추가
+$("추가할곳").prepend("추가내용")
+$("추가할곳").append("추가내용")
+
+위보다 아래것을 직관적이라서 더 많이 이용함.
+- prependTo() : prepend와 같은 의미로 앞에 추가
+- appendTo() : append()와 같은 의미로 뒤에 추가
+$("추가내용").prependTo("추가할곳")
+
+-->

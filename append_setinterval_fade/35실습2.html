@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>35 setInterval 실습2</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap{
+        width: 100%;
+        /* background-color: #000; */
+        height: 50px;
+        line-height: 50px;        
+        overflow: hidden;
+        /* 무조건 감싸는게 있어야함 */
+        text-align: center;
+      }
+      .notice {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;        
+        
+        text-align: center;
+      }
+      .notice li{
+        background-color: #000;
+        color: red;
+        height: 50px;
+        line-height: 50px;  
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+        <ul class="notice">
+          <li>신규가입 회원 5$ 할인쿠폰 발급</li>
+          <li>온라인스토어 회원 무료배송</li>
+        </ul>
+        </div>
+
+
+    <script>
+      setInterval(function () {
+        $(".notice")
+        .stop()
+        .animate({"margin-top":"-50px"}, function () {
+            $(".notice li:first-child").appendTo(".notice");
+            $(".notice").css({"margin-top":"0"})
+      });
+        }, 2000);
+        
+    </script>
+  </body>
+</html>
+<!-- 
+ 자동반복이니 setInterval 
+
+->

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유니세프 텍스트 이미지 움직임</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .wrap {
+        width: 1200px;
+        margin: 50px auto;
+        border: 1px solid red;
+        overflow: hidden; /* 딱 1200px만큼만 보여주는 '창문' 역할 */
+      }
+
+      h2 {
+        font-size: 2rem;
+        line-height: 3.5rem;
+        margin-bottom: 3rem;
+      }
+      h2 span {
+        background-color: red;
+        padding: 0.3rem;
+      }
+      /*wrap ul : 무한 슬라이드 (기차)를 위한 설정 */
+      .wrap ul {
+        width: 1200px;
+        display: flex;
+      }
+      .wrap li {
+        /* flex: 0 0 100%; */
+        flex-grow: 0; /* 아이템이 커질 수 없음 (여백이 있어도 채우지 않음) */
+        flex-shrink: 0; /* 아이템이 줄어들 수 없음 (공간이 부족해도 크기 유지) */
+        flex-basis: 100%; /* 아이템의 기본 크기가 부모의 100% */
+        /* 즉, flexbox 컨테이너 안의 각 li 요소가 부모 너비의 100%를 차지하며, 커지거나 줄어들지 않고 고정된 크기를 유지하도록 설정하는 코드. 주로 슬라이더나 페이드 효과에서 각 슬라이드가 전체 너비를 차지하게 할 때 사용 */
+      }
+
+      /*wrap02*/
+      .wrap02 {
+        display: flex;
+      }
+      .wrap02 > div {
+        width: 50%;
+      }
+      .wrap02 img {
+        width: 100%;
+      }
+      .wrap02 .right {
+        background-color: #ccc;
+        padding: 2rem;
+        box-sizing: border-box; /* padding을 포함한 전체 너비 계산.박스 전체 너비가 넓어지지 않게 */
+        position: relative; /* 원래 있어야 할 위치에서 살짝 옮길 준비 */
+        left: -2rem;
+        top: 2rem;
+      }
+      .right p {
+        display: flex;
+        justify-content: flex-end; /* 오른쪽 정렬 */
+      }
+      .right h4 {
+        font-size: 8rem;
+      }
+      .right h4 span {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul>
+        <li class="purple">
+          <h2>
+            유니세프 팀에 합류해 당신이 지킬 수 있는<br />
+            <span>학교에 다니지 못하는</span> 어린이
+          </h2>
+
+          <div class="wrap02">
+            <div class="left">
+              <img src="img/유니세프1.jpg" alt="학교 교육 이미지" />
+            </div>
+
+            <div class="right">
+              <h3>학교에 다니지 못하는<br />취학 연령 어린이</h3>
+              <p>
+                아직도 전 세계 취학 연령 어린이 6,400만 명이... <br />
+                (상세 설명 텍스트)
+              </p>
+              <h4>6400<span>만 명</span></h4>
+            </div>
+          </div>
+        </li>
+        <li class="bule">
+          <h2>
+            유니세프 팀에 합류해 당신이 지킬 수 있는<br />
+            <span>기후위기에 노출된</span> 어린이
+          </h2>
+
+          <div class="wrap02">
+            <div class="left">
+              <img src="img/유니세프2.jpg" alt="학교 교육 이미지" />
+            </div>
+
+            <div class="right">
+              <h3>기후위기에 노출된<br />취학 연령 어린이</h3>
+              <p>
+                아직도 전 세계 취학 연령 어린이 6,400만 명이... <br />
+                (상세 설명 텍스트)
+              </p>
+              <h4>6400<span>만 명</span></h4>
+            </div>
+          </div>
+        </li>
+        <li class="red">
+          <h2>
+            유니세프 팀에 합류해 당신이 지킬 수 있는<br />
+            <span>생존에 위협을 받는</span> 어린이
+          </h2>
+
+          <div class="wrap02">
+            <div class="left">
+              <img src="img/유니세프3.jpg" alt="학교 교육 이미지" />
+            </div>
+
+            <div class="right">
+              <h3>심각한 가뭄 피해 지역에<br />살고 있는 어린이</h3>
+              <p>
+                기후변화로 전 세계 어린이 10억 명이 위험에 처해
+                <br />있으며, 전 세계 아동은 1억 6천만 명은 심각한 가뭄
+                <br />피해 지역에 살고 있습니다. <br />지금 어린이들에게는
+                깨끗한 식수/위생 환경과 <br />기후변화를 최소화할 수 있는 제도가
+                필요합니다.
+              </p>
+              <h4>1<span>억</span> 6000<span>만 명</span></h4>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script>
+      $(function () {
+        setInterval(function () {
+          $(".wrap ul").animate({ "margin-left": "-1200px" }, 800, function () {
+            $(this).find("li:first-child").appendTo(this);
+            $(this).css({ "margin-left": "0" });
+          });
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
+<!-- $(function () {
+  // 3초마다 함수를 반복 실행합니다.
+  setInterval(function () {
+    
+    // 1. [이동] 기차(ul)를 왼쪽으로 이미지 한 장 너비(-1200px)만큼 밉니다.
+    // 800은 0.8초 동안 부드럽게 움직이라는 뜻입니다.
+    $(".wrap ul").animate({ "margin-left": "-1200px" }, 800, function () {
+      
+      // 2. [재배치] 애니메이션이 끝난 직후(콜백 함수), 
+      // 맨 앞의 자식(li)을 떼서 기차의 맨 뒤(ul의 끝)로 붙입니다.
+      $(this).find("li:first-child").appendTo(this);
+
+      // 3. [복구] 칸을 뒤로 보냈으니, ul의 위치를 즉시 0으로 되돌립니다.
+      // .css()는 애니메이션 없이 순식간에 이동하므로 사용자는 눈치채지 못합니다.
+      $(this).css({ "margin-left": "0" });
+      
+    });
+
+  }, 3000); // 3000ms = 3초 대기
+});
+ -->

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>40실습.무한반복 슬라이드</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      div {
+        width: 900px;
+        border: 1px solid red;
+        margin: 50px auto;
+        overflow: hidden;
+      }
+      ul {
+        width: 1200px;
+        display: flex;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li><img src="img/pic1.jpg" alt="" /></li>
+        <li><img src="img/pic2.jpg" alt="" /></li>
+        <li><img src="img/pic3.jpg" alt="" /></li>
+        <li><img src="img/pic4.jpg" alt="" /></li>
+      </ul>
+    </div>
+    <script>
+      setInterval(function () {
+        $("ul").animate({ "margin-left": "-300px" }, 1500, function () {
+          $("ul > li:first-child").appendTo("ul");
+          ($("ul").css({ "margin-left": "0" }), 2000);
+        });
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+문제)자동으로 pic1부터 pic4까지 움직이고 반복되게 하기.
+setinterval 이용.
+1. Ul을 왼쪽으로 이동 
+$("ul").animate({ "margin-left": "-300px" }, 1500, function () {
+
+2. 애니메이션이 끝난 후, 맨앞의 자식(li)을 떼서 맨 뒤로 보낸다
+$("ul > li:first-child").appendTo("ul")
+
+3. li는 옮겼지만 ul 본체는 여전히 -300px 지점에 있으므로 0으로 이동.
+$("ul").css({"margin-left":"0"});
+
+문제2)https://www.unicef.or.kr/event/unicef-team-ring1-1/ 의 중간에 이름이 바뀌어 나오게 만들게
+-->

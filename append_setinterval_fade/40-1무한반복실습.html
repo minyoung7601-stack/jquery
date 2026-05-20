@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>40-1 세로 무한반복실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap {
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+      }
+      .line {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        font-weight: bold;
+      }
+      .name-window {
+        width: 150px;
+        height: 50px;
+        overflow: hidden;
+        background-color: #fff;
+        color: #000;
+        margin: 0 10px;
+      }
+      .name-list {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+      }
+      .name-list li {
+        width: 100%;
+        height: 50px;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="line">
+        <span>나,</span>
+        <div class="name-window">
+          <ul class="name-list">
+            <li><img src="img/name1.png" /></li>
+            <li><img src="img/name2.png" /></li>
+            <li><img src="img/name3.png" /></li>
+            <li><img src="img/name4.png" /></li>
+          </ul>
+        </div>
+        <span>은/는</span>
+      </div>
+      <div>전 세계 어린이와 함께하는 유니세프 팀입니다.</div>
+    </div>
+    <script>
+      $(function () {
+        setInterval(function () {
+          $(".name-list").animate({ "margin-top": "-50px" }, 2000, function () {
+            $(this).find("li:first-child").appendTo(this);
+            $(this).css({ "margin-top": "0" });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+문제)https://www.unicef.or.kr/event/unicef-team-ring1-1/ 의 중간에 이름이 바뀌어 나오게 만들기.
+기본공식 쓰기 $(function(){
+무한반복 공식 쓰기 setInterval(function(){
+    1, 2, 3 입력하기
+    } 시간 넣기);
+});
+1. 이름 리스트를 위로 50px(이미지 높이)만큼 이동.
+      $(".name-list").animate({ "margin-top": "-50px" }, 2000, function () {
+2. 애니메이션이 끝난 후, 맨 위의 li를 떼서 맨 뒤로 보내기.
+        $(this).find("li:first-child").appendTo(this);     
+3. 다시 위치를 0으로 복구
+        $(this).css({ "margin-top": "0" }); 
+-->

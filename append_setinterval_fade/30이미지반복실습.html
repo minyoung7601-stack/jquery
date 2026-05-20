@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30실습.이미지 반복 슬라이드</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        color: green;
+        text-decoration: none;
+      }
+      .wrap {
+        width: 300px;
+        overflow: hidden;
+        border: 1px solid red;
+        margin: 50px auto;
+        position: relative;
+      }
+      ul {
+        width: 900px;
+        display: flex;
+      }
+      img {
+        width: 100%;
+      }
+      .prev {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .next {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul>
+        <li>
+          <img src="img/pic1.jpg" />
+        </li>
+        <li>
+          <img src="img/pic2.jpg" />
+        </li>
+        <li>
+          <img src="img/pic3.jpg" />
+        </li>
+      </ul>
+
+      <a href="#" class="prev"><i class="fa-solid fa-arrow-left"></i></a>
+      <a href="#" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <script>
+      let i = 0;
+      $(".next").on("click", function () {
+        if (i == 2) {
+          i = 0;
+        } else {
+          i++;
+        }
+        $("ul").animate({ "margin-left": `${-300 * i}px` });
+      });
+
+      $(".prev").on("click", function () {
+        if (i == 0) {
+          i = 2;
+        } else {
+          i--;
+        }
+        $("ul").animate({ "margin-left": `${-300 * i}px` });
+      });
+    </script>
+  </body>
+</html>
+<!-- ul을 기준으로(0) 했을때 왼쪽으로 이동하면 -가 된다 -->

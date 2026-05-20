@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap {
+        width: 300px;
+        overflow: hidden;
+        border: 1px solid red;
+        margin: 50px auto;
+      }
+      ul {
+        width: 900px;
+        display: flex;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul>
+        <li>
+          <img src="img/pic1.jpg" />
+        </li>
+        <li>
+          <img src="img/pic2.jpg" />
+        </li>
+        <li>
+          <img src="img/pic3.jpg" />
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      let i = 0;
+      setInterval(function () {
+        $("ul").animate({ "margin-left": "-300px" }, 1500, function () {
+          $("li:first-child").appendTo("ul");
+          $("ul").css({ "margin-left": "0" });
+        });
+      }, 2000);
+    </script>
+  </body>
+</html>
+
+<!-- 문제) 클릭하지 않고 자동으로 이미지 돌아가게 하기. 콜백함수 써야함. animate는 transition이 있어서 css를 쓴다.
+
+animate는 transition을 포함해서 움직임을 볼 수 있음
+시간대를 쓸 수 있음
+
+css는 transition을 포함하지 않음
+시간대를 쓸 수 없음.
+
+29번실습과 비교하기.
+for문을 이용. 리스트(li)를 클릭하면 슬라이드를 이동시키되, 마지막(2번)을 클릭하면 처음으로 되돌려라
+ <script>
+      $("li").on("click", function () {
+        let i = $(this).index();
+        console.log(i);
+
+        if (i == 2) {
+          $("ul").animate({ "margin-left": "0px" });
+        } else {
+          $("ul").animate({ "margin-left": -300 * (i + 1) + "px" });
+        }
+      });
+
+      for (let i = 0; i <= 2; i++) {
+        $("li")
+          .eq(i)
+          .on("click", function () {
+            // console.log(i);
+            if (i == 2) {
+              $("ul").animate({ "margin-left": "0px" });
+            } else {
+              $("ul").animate({ "margin-left": -300 * (i + 1) + "px" });
+            }
+          });
+      }
+    </script>
+
+
+
+-->
