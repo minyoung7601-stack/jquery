@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01showhide실습2</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="css/01showhide실습2style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h2>SHOP THE ROOM</h2>
+      <div>
+        <ul class="img">
+          <li><img src="img/pic1.jpg" alt="" /></li>
+          <li><img src="img/pic2.jpg" alt="" /></li>
+          <li><img src="img/pic3.jpg" alt="" /></li>
+        </ul>
+        <ul class="title">
+          <li>Living Room</li>
+          <li>Dining Room</li>
+          <li>Bed Room</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $(".title li:first-child").on("click", function () {
+        $(".img li").hide();
+        $(".img li:first-child").show();
+      });
+      $(".title li:nth-child(2)").on("click", function () {
+        $(".img li").hide();
+        $(".img li:nth-child(2)").show();
+      });
+      $(".title li:last-child").on("click", function () {
+        $(".img li").hide();
+        $(".img li:last-child").show();
+      });
+    </script>
+  </body>
+</html>

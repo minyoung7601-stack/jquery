@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11자리번호</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+      <li>list4</li>
+    </ul>
+
+    <script>
+      $("li").on("click", function () {
+        i = $(this).index();
+        // console.log(i);
+        $("li").css({ color: "black" });
+        $("li").eq(i).css({ color: "red" });
+        //   내가 클릭한 아이 eq에 넣는다
+      });
+
+      //   $("li:nth-child(1)").on("click", function () {
+      //     $("li").css({ color: "black" });
+      //     $(this).css({ color: "red" });
+      //   });
+      //   $("li:nth-child(2)").on("click", function () {
+      //     $("li").css({ color: "black" });
+      //     $(this).css({ color: "red" });
+      //   });
+      //   $("li:nth-child(3)").on("click", function () {
+      //     $("li").css({ color: "black" });
+      //     $(this).css({ color: "red" });
+      //   });
+
+      //   $("li:nth-child(4)").on("click", function () {
+      //     $("li").css({ color: "black" });
+      //     $(this).css({ color: "red" });
+      //   });
+    </script>
+
+    <!-- <script>
+      num = 5;
+      console.log(num);
+    </script> -->
+  </body>
+</html>
+<!-- 
+this :: 이벤트가 발생이 된 선택자
+eq(자리수) :: 요소가 몇번째 위치한 자리인지를 알 수 있음.  자리수는 0부터 시작
+index() ::선택자의 자리수 번호를 알고 싶을 때 사용,
+
+css는 1부터 시작 /  :nth-child(자리수)
+
+변수 :: 변하는 수를 담아낼 수 있는 그릇
+
+a(변수) = 1( 오른쪽 : 데이터 숫자값) :: 1을 a에 집어 넣어라
+a=1 (1을 a에 집어 넣어라)
+변수이름은 시작은 영어, 뒤에는 숫자가 옴(특수문자는 _ 만 가능, 공백 안됨, 예약어인 body, html은 변수이름으로 사용하지 않음 )
+
+-->

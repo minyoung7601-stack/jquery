@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      .main {
+        width: 400px;
+        border: 1px solid red;
+        padding: 1rem;
+      }
+      li {
+        margin-bottom: 1rem;
+      }
+
+      .main > li > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        /* color: red; */
+      }
+      .main span {
+        font-size: 1.5rem;
+      }
+      .main i {
+        color: #999;
+      }
+      .sub {
+        margin-left: 2rem;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="main">
+      <li>
+        <a href="#"
+          ><span>회사소개</span> <i class="fa-solid fa-chevron-down"></i
+        ></a>
+        <ul class="sub">
+          <li><a href="#">삼천리소개</a></li>
+          <li><a href="#">경영이념</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#"
+          ><span>투자정보</span> <i class="fa-solid fa-chevron-down"></i
+        ></a>
+        <ul class="sub">
+          <li><a href="#">지배구조</a></li>
+          <li><a href="#">재무정보</a></li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      $(".main > li:nth-child(1)> a").on("click", function () {
+        $(".main > li:nth-child(1)>ul").slideToggle();
+        $(".main > li:nth-child(1)> a").css({ color: "blue" });
+        $(".main > li:nth-child(1) i").css({
+          color: "blue",
+          transform: "rotate(180deg)",
+        });
+      });
+      $(".main > li:nth-child(2)> a").on("click", function () {
+        $(".main > li:nth-child(2)>ul").slideToggle();
+        $(".main > li:nth-child(2)> a").css({ color: "blue" });
+        $(".main > li:nth-child(2) i").css({
+          color: "blue",
+          transform: "rotate(180deg)",
+        });
+      });
+    </script>
+  </body>
+</html>

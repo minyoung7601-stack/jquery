@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slide실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      div {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>2023</h2>
+    <div class="txt">
+      <p>A.N.D Awards</p>
+      <p></p>
+      <p>
+        -더크림유니언 오피셜 / 디지털 미디어 & 서비스 - 중소전문기업 분야 /
+        Grand Prix
+      </p>
+      <h3>고용노동부 일·생활 균형 캠페인 참여 기업 선정</h3>
+    </div>
+    <script>
+      $("h2").on("click", function () {
+        $(this).siblings(".txt").slideToggle(1000);
+      });
+    </script>
+  </body>
+</html>

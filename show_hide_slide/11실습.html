@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11자리번호 실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .large {
+        width: 800px;
+        margin: 50px auto;
+        display: flex;
+        gap: 1rem;
+      }
+      .large li {
+        width: calc((100% - 3rem) / 4);
+        opacity: 0.5;
+      }
+      img {
+        width: 100%;
+      }
+      .small {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .small img {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="large">
+      <li>
+        <img src="img/pic1.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/pic2.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/pic3.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/pic4.jpg" alt="" />
+      </li>
+    </ul>
+    <ul class="small">
+      <li>
+        <img src="img/pic1.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/pic2.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/pic3.jpg" alt="" />
+      </li>
+      <li>
+        <img src="img/pic4.jpg" alt="" />
+      </li>
+    </ul>
+    <!-- small li 클릭하면 클릭한 li의 자리수를 알아내서 large li의 해당 자리수가 opacity:1로 변경 나머지는 opacity:0.5 -->
+    <script>
+      $(".small li").on("click", function () {
+        i = $(this).index();
+        // console.log(i);
+        // 변수가 잘 맞나 개발자가 테스트할때 console 사용후 주석으로 막는다
+        $(".large li").css({ opacity: "0.5" });
+        $(".large li").eq(i).css({ opacity: "1" });
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+this :: 이벤트가 발생이 된 선택자
+eq(자리수) :: 요소가 몇번째 위치한 자리인지를 알 수 있음.  자리수는 0부터 시작
+index() ::선택자의 자리수 번호를 알고 싶을 때 사용,
+
+css는 1부터 시작 /  :nth-child(자리수)
+
+변수 :: 변하는 수를 담아낼 수 있는 그릇
+
+a(변수) = 1( 오른쪽 : 데이터 숫자값) :: 1을 a에 집어 넣어라
+a=1 (1을 a에 집어 넣어라)
+변수이름은 시작은 영어, 뒤에는 숫자가 옴(특수문자는 _ 만 가능, 공백 안됨, 예약어인 body, html은 변수이름으로 사용하지 않음 )
+
+-->

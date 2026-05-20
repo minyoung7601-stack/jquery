@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fade실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+
+      /* large */
+      .large {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        border: 1px solid red;
+        margin: 50px auto;
+      }
+      .large li {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        display: none;
+      }
+      .large li:first-child {
+        display: block;
+      }
+      .large img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+      /* small */
+      .small {
+        display: flex;
+        justify-content: center;
+      }
+      .small li {
+        width: 100px;
+        height: 100px;
+      }
+      .small img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="large">
+      <li>
+        <img src="img/pic1.jpg" />
+      </li>
+      <li>
+        <img src="img/pic2.jpg" />
+      </li>
+      <li>
+        <img src="img/pic3.jpg" />
+      </li>
+      <li>
+        <img src="img/pic4.jpg" />
+      </li>
+    </ul>
+    <ul class="small">
+      <li>
+        <img src="img/pic1.jpg" />
+      </li>
+      <li>
+        <img src="img/pic2.jpg" />
+      </li>
+      <li>
+        <img src="img/pic3.jpg" />
+      </li>
+      <li>
+        <img src="img/pic4.jpg" />
+      </li>
+    </ul>
+    <script>
+      $(".small li:nth-child(1)").on("click", function () {
+        $(".large li").fadeOut();
+        $(".large li:nth-child(1)").fadeIn();
+      });
+      $(".small li:nth-child(2)").on("click", function () {
+        $(".large li").fadeOut();
+        $(".large li:nth-child(2)").fadeIn();
+      });
+      $(".small li:nth-child(3)").on("click", function () {
+        $(".large li").fadeOut();
+        $(".large li:nth-child(3)").fadeIn();
+      });
+      $(".small li:nth-child(4)").on("click", function () {
+        $(".large li").fadeOut();
+        $(".large li:nth-child(4)").fadeIn();
+      });
+    </script>
+  </body>
+</html>

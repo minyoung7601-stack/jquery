@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08animate</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/08ex1.js"></script>
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <button>시작</button>
+    <div>박스</div>
+  </body>
+</html>
+
+<!-- 기본형식은 $("선택자").animate({"속성":"속성값"}, 밀리초, 콜백함수)
+ 
+- 콜백함수는 함수를 호출하는것
+- function()안에 움직일 동작을 넣고 그 동작이 끝나면 다른 함수를 호출해서 순차적으로 움직임을 줄 수 있음
+-->

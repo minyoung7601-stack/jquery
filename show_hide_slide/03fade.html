@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+div{
+    background-color: #f00;
+    width: 50%;
+    height: 500px;
+}
+    </style>
+</head>
+<body>
+    <div class="box1">박스</div>
+    <button class="btn1">fadeIn</buttion>
+    <button class="btn2">fadeOut</buttion>
+    <button class="btn3">fadeToggle</buttion>
+    <button class="btn4">fadeTo</buttion>
+        <script>
+            $(".btn1").on("click", function(){
+                $("div").fadeIn(1000);
+            });
+            $(".btn2").on("click", function(){
+                $("div").fadeOut(1000);
+            });
+            $(".btn3").on("click", function(){
+                $("div").fadeToggle(1000);
+             });   
+            $(".btn4").on("click", function(){
+                $("div").fadeTo(500, 0.5);    
+            });
+        </script>
+</body>
+</html>
+<!-- fade::흐림효과 ==> 서서희 나오거나 서서희 사라짐 opacity
+$(".선택자").fadeIn() :: 서서희 나옴
+$(".선택자").fadeOut() :: 서서희 사라짐
+$(".선택자").fadeToggle() :: 서서희 나오거나 서서희 사라짐
+$(".선택자").fadeTo(속도, 불투명도) :: 불투명도 조절함 -->

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05addremove실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      div {
+        width: 500px;
+        height: 270px;
+        margin: 50px auto;
+        border: 1px solid red;
+        overflow: hidden;
+      }
+      .active {
+        transform: scale(1.2);
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="img/pic1.jpg" />
+    </div>
+    <script>
+      $("div").on("mouseenter", function () {
+        $("div img").addClass("active");
+      });
+      $("div").on("mouseleave", function () {
+        $("div img").removeClass("active");
+      });
+    </script>
+  </body>
+</html>

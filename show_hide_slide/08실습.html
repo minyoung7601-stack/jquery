@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>콜백 선 만들기</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/08실습.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 800px;
+        height: 600px;
+        /* border: 1px solid red; */
+        background-color: #eee;
+        margin: 50px auto;
+        position: relative;
+      }
+      .wrap > div {
+        background-color: #333;
+        height: 1px;
+        position: absolute;
+        /* width: 100%; */
+      }
+      .top {
+        left: 0px;
+        top: 0px;
+      }
+      .wrap .right {
+        right: 0px;
+        top: 0px;
+        width: 1px;
+        /* height: 100%; */
+      }
+      .bottom {
+        right: 0px;
+        bottom: 0px;
+      }
+      .wrap .left {
+        left: 0px;
+        bottom: 0px;
+        width: 1px;
+        /* height: 100%; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="top"></div>
+      <div class="right"></div>
+      <div class="bottom"></div>
+      <div class="left"></div>
+    </div>
+  </body>
+</html>
+
+<!-- 선 모양 만들기
+css에서 왼쪽 방향부터 할지, 오른쪽 방향부터 갈지 정해야함 
+-->

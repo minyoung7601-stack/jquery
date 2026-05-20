@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01showhide실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="css/01showhide실습style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <ul>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">1:1문의</a></li>
+        <li><a href="#">공지사항</a></li>
+      </ul>
+      <p>MINIMAL CARE FOR YOUR SKIN, GENTLE CARE FOR YOUR HEART.</p>
+      <div class="info">
+        <a href="#">INFO</a>
+        <i class="fa-solid fa-angle-up"></i>
+      </div>
+      <div class="txt">
+        주식회사 에코미니멀 (ECOMINIMAL) 대표 : 박국철 사업자등록번호:
+        258-86-03556 [사업자정보확인]<br />
+        통신판매업 신고번호 : 2025-화성동탄-5455<br />
+        주소 : 18469 경기도 화성시 동탄첨단산업1로 27, 제비동 23층
+        2344호(영천동, 금강 펜테리움 IX타워)<br />
+        고객센터 : 031-723-0323 이메일 : contact@ecominimal.co.kr
+      </div>
+    </div>
+    <script>
+      $(".info i").on("click", function () {
+        $(".txt").toggle(1000);
+      });
+    </script>
+  </body>
+</html>

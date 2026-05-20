@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="css/01showhide실습3style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <ul class="title">
+        <li>LIVING ROOM<br />리빙룸</li>
+        <li>DINNING ROOM<br />다이닝룸</li>
+        <li>BED ROOM<br />베드룸</li>
+        <li>FABRIC<br />패브릭</li>
+        <li>DECOR<br />데코</li>
+      </ul>
+      <ul class="img">
+        <li><img src="img/pic1.jpg" alt="" /></li>
+        <li><img src="img/pic2.jpg" alt="" /></li>
+        <li><img src="img/pic3.jpg" alt="" /></li>
+        <li><img src="img/pic4.jpg" alt="" /></li>
+      </ul>
+    </div>
+    <script>
+      // 메뉴(리빙룸~데코) 클릭 시
+      $(".title li").on("click", function () {
+        $(".img li").toggle(1000);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addremove</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      div {
+        width: 50%;
+        height: 100px;
+        background-color: orange;
+      }
+      p {
+        background-color: #ccc;
+      }
+      .on {
+        font-size: 50px;
+        color: red;
+        background-color: tomato;
+        width: 200px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>박스</div>
+    <button class="btn1">add</button>
+    <button class="btn2">remove</button>
+    <button class="btn3">toggle</button>
+    <p>내용입니다</p>
+    <script>
+      $("p").on("click", function () {
+        $("p").css({
+          "font-size": "30px",
+          color: "red",
+          "background-color": "tomato",
+          width: "300px",
+          height: "50px",
+        });
+      });
+
+      $(".btn1").on("click", function () {
+        $("div").addClass("on");
+      });
+      $(".btn2").on("click", function () {
+        $("div").removeClass("on");
+      });
+      $(".btn3").on("click", function () {
+        $("div").toggleClass("on");
+      });
+      $("div").on("mouseenter", function () {
+        $(this).addClass("on");
+      });
+      $("div").on("mouseleave", function () {
+        $(this).removeClass("on");
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+$("선택자).addClass("클래스명") :: 클래스를 추가할때 이용
+$("선택자).removeClass("클래스명") :: 클래스를 삭제할때 이용
+$("선택자).toggleClass("클래스명") :: 클래스를 추가 또는 삭제를 번갈아가면서 동작함 
+this : 나 자신-->

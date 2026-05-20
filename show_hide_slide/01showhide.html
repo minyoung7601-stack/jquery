@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      .box1 {
+        width: 50%;
+        height: 200px;
+        background-color: orange;
+      }
+      img {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">박스</div>
+    <button class="btn1">보이기</button>
+    <button class="btn2">숨기기</button>
+    <button class="btn3">토글</button>
+
+    <div class="box2">
+      <img src="img/pic1.jpg" alt="" />
+      <button class="btn4">보이기</button>
+      <button class="btn5">숨기기</button>
+      <button class="btn6">토글</button>
+    </div>
+    <script>
+      $(".btn2").on("click", function () {
+        $(".box1").hide(1000);
+      });
+
+      $(".btn1").on("click", function () {
+        $(".box1").show(1000);
+      });
+      $(".btn3").on("click", function () {
+        $(".box1").toggle(1000);
+      });
+      $(".btn5").on("click", function () {
+        $("img").hide(1000);
+      });
+      $(".btn4").on("click", function () {
+        $("img").show(1000);
+      });
+      $(".btn6").on("click", function () {
+        $("img").toggle(1000);
+      });
+    </script>
+  </body>
+</html>
+<!-- $("선택자").on("이벤트",function(){
+
+})
+- show() ::보이기
+- hide() :: 숨기기
+- toggle() :: 하나의 명령어로 두가지 기능을 가지고 있음(show, hide) 
+1초 : 1000
+0.5초 : 500
+-->

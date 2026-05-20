@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        margin: 50px auto;
+        transition: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <div>박스</div>
+    <button class="btn1">글자색</button>
+    <button class="btn2">배경</button>
+    <button class="btn3">태두리</button>
+    <button class="btn4">너비</button>
+    <button class="btn5">높이</button>
+    <button class="btn6">크기</button>
+    <script>
+      $(".btn1").on("click", function () {
+        $("div").css({ color: "red" });
+      });
+      $(".btn2").on("click", function () {
+        $("div").css({ "background-color": "#ccc" });
+      });
+      $(".btn3").on("click", function () {
+        $("div").css({ border: "1px solid red" });
+      });
+      $(".btn4").on("click", function () {
+        $("div").css({ width: "300px" });
+      });
+      $(".btn5").on("click", function () {
+        $("div").css({ height: "50px" });
+      });
+      $(".btn6").on("click", function () {
+        $("div").css({ transform: "scale(2)" });
+      });
+    </script>
+  </body>
+</html>
