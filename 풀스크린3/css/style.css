@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+/* header */
+header {
+  background-color: #ccc;
+  position: fixed;
+  /* 헤더 고정후 줄어드니 너비 100% */
+  width: 100%;
+}
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+header ul li {
+  width: calc(100% / 4);
+}
+header ul li a {
+  width: 100%;
+  /* li의 너비 만큼을 a가 다 사용하게 하기 위해 너비값 정함 */
+  padding: 1rem 0;
+  display: inline-block;
+}
+header ul li:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* #container */
+#container {
+  width: 100%;
+  height: 100vh;
+}
+#container section {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.page1 {
+  background-image: url(../img/pic11.jpg);
+}
+.page2 {
+  background-image: url(../img/pic22.jpg);
+}
+.page3 {
+  background-image: url(../img/pic33.jpg);
+}
+.page4 {
+  background-image: url(../img/pic44.jpg);
+}
+
+/* navi */
+#navi {
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#navi li {
+  width: 5px;
+  height: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  /* span의 부모 */
+  /* border: 1px solid red; 영역 확인*/
+  cursor: pointer;
+}
+#navi li:last-child {
+  margin-bottom: 0px;
+}
+#navi li.on {
+  background-color: red;
+}
+#navi li span {
+  font-size: 0.7rem;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+#navi li.on span {
+  display: block;
+}
+
+/* page1 이미지 1개 등장*/
+.page1 div,
+page2 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.page1 h2 {
+  margin-bottom: 2rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.page1 img {
+  width: 500px;
+  height: 200px;
+  object-fit: cover;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.4s;
+}
+
+/* page1 움직임 */
+.page1.on h2 {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.page1.on img {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* page2 이미지3개 등장 */
+.page2 {
+  background-color: #3498db; /* 파란색 배경 */
+  color: #fff; /* 전체 글씨 흰색 */
+}
+/* 중앙 정렬을 위한 .inner 설정 */
+.page2 .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/* 제목 스타일 */
+.page2 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+/* --- 카드 뭉치 (ul.wrap) 레이아웃 --- */
+.page2 .wrap {
+  display: flex;
+  gap: 20px; /* 카드 사이 간격 */
+}
+/* --- 카드 공통 스타일 (li) --- */
+.page2 .wrap li {
+  width: 250px;
+  height: 400px;
+  border-radius: 20px; /* 카드 모서리 둥글게 */
+  position: relative; /* p와 img의 부모 기준점 */
+  overflow: hidden; /* 이미지가 카드 밖으로 나가지 않게 */ /* 애니메이션 준비 */
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.8s;
+}
+/* 카드 이미지 스타일 */
+.page2 .wrap li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 카드 비율에 맞게 꽉 차게 */
+  object-position: center;
+}
+/* 카드 글씨 스타일 (p) */
+.page2 .wrap li p {
+  position: absolute; /* 카드 위에 글씨 띄우기 */
+  left: 20px;
+  bottom: 20px; /* 카드 왼쪽 아래 배치 */
+  font-size: 1.1rem;
+  z-index: 10; /* 이미지보다 위에 보이게 */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 글씨가 잘 보이게 그림자 추가 */
+}
+/* --- 각 카드별 transition delay (하나씩 나타나는 효과) --- */
+.page2 .wrap li.card1 {
+  transition-delay: 0.2s;
+}
+.page2 .wrap li.card2 {
+  transition-delay: 0.4s;
+}
+.page2 .wrap li.card3 {
+  transition-delay: 0.6s;
+}
+/* --- 등장 효과 (on 클래스가 붙었을 때) --- */
+.page2.on .wrap li {
+  opacity: 1;
+  transform: translateY(0);
+}
