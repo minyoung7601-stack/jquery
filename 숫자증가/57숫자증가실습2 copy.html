@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>숫자증가실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+      }
+
+      .con01 {
+        background-color: #f4f4f4;
+      }
+      .con03 {
+        background-color: #f4f4f4;
+      }
+
+      /* 숫자 섹션 스타일 */
+      .con02 {
+        background: url("https://via.placeholder.com/1920x1080") no-repeat
+          center/cover;
+        color: #fff;
+        position: relative;
+      }
+      .con02::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1200px;
+        z-index: 1; /* 배경 위로 올리기 */
+      }
+      li {
+        text-align: center;
+        font-weight: bold;
+      }
+      li span {
+        display: block;
+        font-size: 4rem;
+        color: #ff6b6b; /* 하트재단 느낌의 포인트 컬러 */
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <section class="con01">스크롤을 아래로 내려보세요 ↓</section>
+
+      <section class="con02">
+        <ul>
+          <li><span class="num" data-target="191357">0</span>의료비 지원</li>
+          <li><span class="num" data-target="277287">0</span>영양식 지원</li>
+          <li><span class="num" data-target="2904">0</span>장학금 지원</li>
+        </ul>
+      </section>
+
+      <section class="con03">끝</section>
+    </div>
+
+    <script>
+      $(function () {
+        let isVisible = false; // 숫자가 이미 올라갔는지 체크하는 변수
+
+        $(window).on("scroll", function () {
+          const sectionTop = $(".con02").offset().top; // 숫자 섹션2의 위치
+          const windowHeight = $(window).height(); // 브라우저 높이
+          const scrollPos = $(window).scrollTop(); // 현재 스크롤 위치
+
+          // 1. 스크롤이 숫자 섹션 근처에 도달했고 + 아직 실행 전일 때
+          if (scrollPos > sectionTop - windowHeight + 200 && !isVisible) {
+            startCount();
+            isVisible = true; // 중복 실행 방지
+          }
+        });
+
+        function startCount() {
+          $(".num").each(function () {
+            const $this = $(this);
+            const target = parseInt($this.attr("data-target")); // 목표값
+
+            // 제이쿼리 애니메이션 기능을 이용한 숫자 카운팅
+            $({ val: 0 }).animate(
+              { val: target },
+              {
+                duration: 2000, // 2초 동안 진행
+                step: function () {
+                  // 숫자에 콤마(,)를 찍어서 출력
+                  $this.text(Math.floor(this.val).toLocaleString());
+                },
+                complete: function () {
+                  // 마지막에 정확한 목표 수치 세팅
+                  $this.text(target.toLocaleString());
+                },
+              },
+            );
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>숫자증가실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        height: 100vh;
+      }
+      .con02 {
+        background-color: #ccc;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+        height: 100%; /*높이값을 준 이유? 자식을 정 중앙에 놓기 위해*/
+        font-size: 2rem;
+      }
+      /* 흔들리는것 방지 */
+      span {
+        width: 70px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <section class="con01"></section>
+      <section class="con02">
+        <ul>
+          <li>장학금<span>0</span>명</li>
+          <li>연구자발굴<span>0</span>명</li>
+          <li>시각장애인<span>0</span>명</li>
+        </ul>
+      </section>
+      <section class="con03"></section>
+    </div>
+    <script>
+      $(function () {
+        let con02 = $(".con02").offset().top;
+        // console.log(con02);
+        let sc = false;
+        $(window).on("scroll", function () {
+          pos = $(this).scrollTop();
+          // console.log(pos);
+
+          if (pos >= con02 && !sc) {
+            sc = true;
+            let num1 = 0; /*시작값*/
+            let num2 = 50;
+            let num3 = 20;
+
+            let end1 = 100; /*끝값*/
+            let end2 = 200;
+            let end3 = 400;
+
+            let count = 0; /*증가횟수*/
+
+            let timer = setInterval(function () {
+              count++; /*횟수를 1씩 증가*/
+              num1++;
+              num2 += 2;
+              num3 += 2;
+              $("li:nth-child(1) span").text(num1);
+              $("li:nth-child(2) span").text(num2);
+              $("li:nth-child(3) span").text(num3);
+
+              if (count >= 100) {
+                $("li:nth-child(1) span").text(end1);
+                $("li:nth-child(2) span").text(end2);
+                $("li:nth-child(3) span").text(end3);
+                clearInterval(timer);
+              }
+            }, 200);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
