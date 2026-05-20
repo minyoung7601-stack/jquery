@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/06ex3.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      ul {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: 50 auto;
+        border: 1px solid red;
+        /* 영역확인 */
+        flex-wrap: wrap;
+      }
+      li {
+        width: calc((100% - 3rem) / 4);
+        /* flex-wrap: wrap; 때문에 gap을 빼줌 */
+        height: 400px;
+        background-color: orange;
+        position: relative;
+        /* overflow: hidden; */
+        /* li의 자식 p가 영향받음 */
+      }
+      p {
+        font-size: 1.5rem;
+        position: absolute;
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <p>list1</p>
+      </li>
+      <li>
+        <p>list2</p>
+      </li>
+      <li>
+        <p>list3</p>
+      </li>
+      <li>
+        <p>list4</p>
+      </li>
+    </ul>
+  </body>
+</html>

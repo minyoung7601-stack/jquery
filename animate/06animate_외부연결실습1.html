@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animate 외부js로 연결 실습</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/06ex2.js"></script>
+    <style>
+      div {
+        width: 300px;
+        height: 100px;
+        background-color: orange;
+        position: absolute;
+        left: 100px;
+        top: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn1">시작</button>
+    <button class="btn2">초기화</button>
+    <div>박스</div>
+  </body>
+</html>
+<!-- 
+외부스크립트는 파일을 만들때 파일형식을 js로 하면됨.
+<script src>로 연결함
+ 반드시 내가 만든 <script src="js/jquery-4.0.0.min.js"> 아래에 외부js 파일을 연결해야함    -->

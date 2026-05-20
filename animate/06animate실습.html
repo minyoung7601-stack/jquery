@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글자 애니메이션</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      .container {
+        width: 300px;
+        height: 50px;
+        background-color: #f0f0f0;
+        margin: 50px auto;
+        border: 2px solid #333;
+
+        /* 중요: 영역 밖으로 나가는 글자를 숨깁니다 */
+        overflow: hidden;
+        position: relative;
+      }
+
+      .container p {
+        position: absolute;
+        white-space: nowrap; /* 글자가 줄바꿈되지 않게 함 */
+        left: 100%; /* 시작 위치: 박스의 오른쪽 바깥 */
+        top: 15px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="img/avatar_hat.jpg" />
+    </div>
+    <div class="container">
+      <p>글자 글자 글자</p>
+    </div>
+    <button class="start-btn">애니메이션 시작</button>
+    <script>
+      $(".start-btn").on("click", function () {
+        // p태그를 왼쪽(left: 0)으로 1초 동안 이동
+        $(".container p").animate({ left: "0px" }, 1000);
+      });
+    </script>
+  </body>
+</html>
