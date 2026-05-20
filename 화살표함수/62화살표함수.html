@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>62화살표함수</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      .btn.on {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button class="btn">버튼1</button>
+      <button class="btn">버튼2</button>
+      <button class="btn">버튼3</button>
+    </div>
+
+    <script>
+      // $(".btn").on("click", function () {
+      //   $(this).toggleClass("on");
+      // });
+
+      //화살표함수로
+      $(".btn").on("click", (e) => {
+        $(e.currentTarget).toggleClass("on");
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+화살표함수는 this를 사용할 수 없음 
+this 대신 e를 사용함
+e.currentTarget
+-->

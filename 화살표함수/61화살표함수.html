@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>화살표함수</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      .box {
+        width: 200px;
+        height: 100px;
+        background-color: orange;
+        margin: 50px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">버튼</button>
+
+    <div class="box"></div>
+
+    <script>
+      //   $().on("click", () => {
+      //     $(".box").toggle();
+      //   });
+
+      $(".btn").on("click", function () {
+        $(".box").toggle();
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+화살표함수는 영어로 쓰면 오타가 날 수 있으니 기호로 쓴다. 
+
+function 함수명(){
+    실행문
+}
+
+$("선택자").on("click", function(){
+    실행문
+})
+
+$("선택자").on("click",()=>{
+    실행문
+})
+
+function 함수명() {
+  실행문
+}
+
+함수명 = () => {
+  실행문
+}
+
+호출
+this : 사용못함
+-->

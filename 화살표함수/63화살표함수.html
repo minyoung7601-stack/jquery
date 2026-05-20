@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>63화살표함수</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div>박스</div>
+
+    <script>
+      // function color() {
+      //   $("div").css({ "background-color": "#ccc" });
+      // }
+      // color();
+
+      //위의 일반함수(function)를 아래의 화살표 함수로 만들기
+
+      const color = () => {
+        $("div").css({ "background-color": "#ccc" });
+      };
+
+      color();
+    </script>
+  </body>
+</html>
+<!-- 
+funtion으로 함수를 만들고
+함수 호출을 함수 위에서 호출을 하든 함수 아래에서 호출을 하든 상관없이 함수가 실행이 됨
+(어디에 있던 함수만 호출하면 실행이 됨)
+
+화살표함수는 호출을 할때는 '반드시' 함수 밑에서 호출을 해야함
+-->
