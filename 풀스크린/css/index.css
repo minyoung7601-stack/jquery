@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* header(책갈피) */
+header {
+  background-color: #000;
+  color: #fff;
+  /* position: fixed; */
+  /* 부모가 윈도우 화면임 */
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+}
+header ul {
+  display: flex;
+  justify-content: space-between;
+}
+header ul li {
+  width: calc(100% / 4);
+  text-align: center;
+}
+header ul li a {
+  width: 100%;
+  padding: 1rem 0;
+  display: inline-block;
+}
+header ul li:hover {
+  color: #222;
+  background-color: #fff;
+}
+
+/* container */
+#container {
+  position: fixed;
+  width: 100%;
+}
+#container section {
+  width: 80%;
+  height: 100vh;
+}
+
+#container section.page1 {
+  background-color: beige;
+}
+#container section.page2 {
+  background-color: skyblue;
+}
+#container section.page3 {
+  background-color: yellow;
+}
+#container section.page4 {
+  background-color: yellowgreen;
+}
+.page1 {
+  padding: 6rem;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+.bg-text {
+  font-size: 3rem;
+}
