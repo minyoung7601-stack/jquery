@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>64color</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        background-color: #ccc;
+        position: absolute;
+        left: 100px;
+        top: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>박스1</div>
+
+    <script>
+      $("div").on("click", () => {
+        $("div").animate(
+          { "background-color": "red", top: "100px" },
+          1000,
+          "easeInBounce",
+        );
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+animate는 속성값에 숫자만 있는것을 적용했었는데
+컬러를 이용하고 싶으면 jquery-ui.min.js을 스크립트 소스에 넣으면 됨
+
+컬러명이 적용 안되는것도 있음(예: orange)
+
+가속도를 지정할 수 있음 (예 : easing)
+jquery-ui.min.js을 스크립트 소스에 넣으면 됨
+가속도를 지정할 때는 밀리초를 입력해야함
+
+-->

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12toggleClass</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .on {
+        background-color: #000;
+      }
+      .on .icon {
+        color: #ff0;
+      }
+      .on .txt {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="icon"><i class="fa-solid fa-sun"></i></div>
+    <div class="txt">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam nulla
+      exercitationem saepe nemo, inventore sit, voluptate adipisci laudantium
+      itaque assumenda veritatis. Tenetur rem dolorem ducimus possimus quo.
+      Natus, tempore ad.
+    </div>
+    <script>
+      $(".icon").on("click", function () {
+        $("body").toggleClass("on");
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+addClass("클래스명") :: 클래스를 추가
+removeClass("클래스명") :: 클래스를 제거
+toggleClass("클래스명") :: 클래스를 추가+제거
+토글은 하나로 두가지 기능을 가지고 있는것을 얘기함
+
+
+
+
+-->

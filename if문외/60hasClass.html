@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      .btn {
+        background-color: orange;
+        width: 100%;
+        height: 50px;
+      }
+      .on {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">클릭</div>
+    <script>
+      $(".btn").on("click", function () {
+        isOn = $(this).hasClass("on");
+        console.log(isOn);
+        if (isOn) {
+          $(this).removeClass("on");
+        } else {
+          $(this).addClass("on");
+        }
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+hasClass()는 제이쿼리(jQuery)에서 **"이 요소에 특정 클래스 이름이 붙어 있니?"**라고 물어보는 기능.
+
+결과를 true(맞아) 또는 false(아니)로 대답해주기 때문에, 주로 if문과 함께 사용하여 조건에 따라 다른 동작을 하게 만들 때 사용.
+-->

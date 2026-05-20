@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>59 탭메뉴</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+
+      /* visual */
+      #visual section {
+        width: 100%;
+        padding: 50px 0px;
+        text-align: center;
+        display: none;
+      }
+      #visual section:nth-child(1) {
+        background-color: lightpink;
+      }
+      #visual section:nth-child(2) {
+        background-color: lightblue;
+      }
+      #visual section:nth-child(3) {
+        background-color: lightgreen;
+      }
+      #visual section.on {
+        display: block;
+      }
+
+      /* tab */
+      .tab {
+        display: flex;
+        border-bottom: 1px solid orange;
+        margin-top: 30px;
+      }
+      .tab li {
+        padding: 10px 20px;
+        color: #333;
+        cursor: pointer;
+        border-left-width: 1px;
+        border-right-width: 1px;
+        border-bottom: transparent;
+      }
+      .tab li:nth-child(1).active {
+        background-color: lightpink;
+      }
+      .tab li:nth-child(2).active {
+        background-color: lightblue;
+      }
+      .tab li:nth-child(3).active {
+        background-color: lightgreen;
+      }
+      .active {
+        border-top: 5px solid orange;
+        border-left-color: 1px solid #333;
+        border-right-color: 1px solid #333;
+        border-style: solid;
+        margin-top: -5px;
+      }
+
+      /* container */
+      #container {
+        width: 100%;
+        height: 200px;
+        background-color: #ccc;
+        position: relative;
+      }
+      #container section {
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+      }
+      #container p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      #container section.on {
+        display: block;
+      }
+
+      /* #visual section:nth-child(1) {
+        background-color: #ccc;
+        background-image: url(img/pic1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      } 아래처럼 축약할 수 있다.  center와 cover는 같이 써야함. center를 지우면 cover 의미가 없음 */
+
+      #visual section:nth-child(1) {
+        background: #ccc url(img/pic1.jpg) no-repeat center / cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="visual">
+      <section class="on">
+        <h2>MENU1</h2>
+        <p>상품설명입니다.</p>
+      </section>
+      <section>
+        <h2>MENU2</h2>
+        <p>상품설명입니다.</p>
+      </section>
+      <section>
+        <h2>MENU3</h2>
+        <p>상품설명입니다.</p>
+      </section>
+    </div>
+    <ul class="tab">
+      <li class="active">MENU1</li>
+      <li>MENU2</li>
+      <li>MENU3</li>
+    </ul>
+    <div id="container">
+      <section class="on">
+        <p>상품설명입니다. MENU1</p>
+      </section>
+      <section>
+        <p>상품설명입니다. MENU2</p>
+      </section>
+      <section>
+        <p>상품설명입니다. MENU3</p>
+      </section>
+    </div>
+    <!-- 문제1)addClass와 removeClass사용해서 MENU1탭을 클릭하면, h2의 MENU1과 P의 MENU1로 바뀌게 제이쿼리로 만들기.
+     문제2) tab을 클릭해도 menu1, menu2, menu3의 글씨가 동일한 위치에 있게하기  -->
+    <script>
+      $(function () {
+        $(".tab li").click(function () {
+          let i = $(this).index();
+          $(".tab li").removeClass("active");
+          $(this).addClass("active");
+
+          $("#visual section").removeClass("on");
+          $("#visual section").eq(i).addClass("on");
+
+          $("#container section").removeClass("on");
+          $("#container section").eq(i).addClass("on");
+        });
+      });
+    </script>
+  </body>
+</html>

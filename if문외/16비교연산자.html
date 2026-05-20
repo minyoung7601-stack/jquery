@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비교연산자</title>
+  </head>
+  <body>
+    <script>
+      let num1 = 10;
+      let num2 = 20;
+
+      document.write("num1이 num2보다 큽니까?" + (num1 > num2) + "<br>");
+      document.write(
+        "num1이 num2보다 크거나 같습니까?" + (num1 >= num2) + "<br>",
+      );
+      document.write("num1이 num2보다 작습니까?" + (num1 < num2) + "<br>");
+      document.write(
+        "num1이 num2보다 작거나 같습니까?" + (num1 <= num2) + "<br>",
+      );
+      document.write("num1이 num2보다 같습니까?" + (num1 == num2) + "<br>");
+      document.write("num1이 num2과 틀립니까?" + (num1 != num2) + "<br>");
+
+      let num3 = 10;
+      let num4 = "10";
+      document.write("num3이 num4랑 같습니까?" + (num3 == num4) + "<br>");
+      document.write("num3이 num4랑 같습니까?" + (num3 === num4) + "<br>");
+      document.write("num3이 num4랑 틀립니까?" + (num3 != num4) + "<br>");
+      document.write("num3이 num4랑 틀립니까?" + (num3 !== num4) + "<br>");
+    </script>
+  </body>
+</html>
+<!-- 
+크다  >
+크거나 같다 >=
+작다 <
+작거나 같다 <=
+같다 ==
+같지않다 !=
+
+비교연산자는 결과값이 true 또는 false가 나옴
+
+10 > 5 ==> true
+10 < 5 ==> flase
+
+==(같다) 와  !=(같지않다) 는 데이터 값만 비교함
+=== (같다)는 데이터값, 자료 유형비교(문자, 숫자유형)
+!==(같지 않다)는 데이터값, 자료 유형비교(문자, 숫자유형) 
+
+-->

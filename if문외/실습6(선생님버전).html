@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      ul {
+        list-style: none;
+      }
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+      .con01 {
+        background-color: #ccc;
+        padding: 100px;
+        padding-right: 0px;
+      }
+      .con01 .txt {
+        font-size: 100px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        border: 1px solid red;
+      }
+
+      .con01 .txt p:first-child {
+        color: transparent;
+        -webkit-text-stroke: 2px #fff;
+        transform: translate(2rem, -3rem);
+      }
+      .con01 ul {
+        display: flex;
+        gap: 3rem;
+        padding-top: 100px;
+      }
+      .con01 li {
+        flex: 0 0 450px;
+
+        background-color: #fff;
+        border-radius: 1rem;
+        transition: 0.5s;
+        overflow: hidden;
+      }
+      .con01 img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+        transition: 0.5s;
+      }
+      .con01 li div {
+        padding: 2rem;
+      }
+      .con01 li:hover {
+        transform: translateY(-50px);
+      }
+      .con01 li:hover img {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="con01">
+      <div class="txt">
+        <p>OUR</p>
+        <p>ARCHIVE</p>
+      </div>
+      <ul class="archive">
+        <li>
+          <img src="img/pic1.jpg" alt="" />
+          <div>
+            <p>2025-09-23</p>
+            <h2>if(kakao) 2025 컴퍼런스</h2>
+          </div>
+        </li>
+        <li>
+          <img src="img/avatar_hat.jpg" alt="" />
+          <div>
+            <p>2025-09-23</p>
+            <h2>if(kakao) 2025 컴퍼런스</h2>
+          </div>
+        </li>
+        <li>
+          <img src="img/pic1.jpg" alt="" />
+          <div>
+            <p>2025-09-23</p>
+            <h2>if(kakao) 2025 컴퍼런스</h2>
+          </div>
+        </li>
+        <li>
+          <img src="img/pic1.jpg" alt="" />
+          <div>
+            <p>2025-09-23</p>
+            <h2>if(kakao) 2025 컴퍼런스</h2>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="con02">
+      <div class="left">
+        <p>EDLE</p>
+        <p>SOCIAL</p>
+      </div>
+      <div class="right">
+        <ul>
+          <li>
+            <div class="txt02">EDLE</div>
+            <div class="txt03">
+              <p>단발신사숙녀 x 카카오<br />이모티콘</p>
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

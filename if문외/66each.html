@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>66each</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/egjs-jquery-transform/2.0.0/transform.min.js"
+      integrity="sha512-vOc3jz0QulHRiyMXfp676lHxeSuzUhfuw//VUX12odAmlUbnKiXH4GQxBRqwKhF3Mkswqr5ILY9MtEM4ZwcS2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      ul {
+        width: 300px;
+        margin: 50px auto;
+      }
+      li {
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 10px 0;
+        /* background-color: #ccc; */
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>list1</li>
+      <li>list2</li>
+      <li>list3</li>
+      <li>list4</li>
+    </ul>
+
+    <script>
+      $("li").each(function (i) {
+        // console.log(i);
+        if (i % 2 == 0) {
+          $(this).css({ background: "orange" });
+        } else {
+          $(this).css({ "background-color": "yellow" });
+        }
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+.each() : 선택한 요소를 하나씩 반복하면서 실행
+
+$("선택자").each(function(){
+    실행문
+})
+
+순번이 필요할때
+$("선택자").each(function(index){
+    실행문
+})
+
+-->

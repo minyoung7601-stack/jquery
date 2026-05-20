@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>카카오 이미지 크기 변경</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+      .con01 {
+        background-color: #ccc;
+        padding: 100px;
+        padding-right: 0px;
+        display: flx;
+
+      }
+      .con01 .txt{
+        width: 30%;
+        font-size:100px;
+        color:#fff;
+        display: flex;
+        justify-content: center;
+        border: 1px solid red;
+      }
+      .con01 .txt p:first-child{
+        color: transparent;
+        -webkit-text-stroke:2px #fff;
+        transform: translate(2rem, -3rem);
+      }
+
+     .con01 ul{
+        width:70%;
+        display: flex;
+        gap:3rem;
+        padding-top: 100px;
+     }
+     .con01 li{
+        flex: 0 0 450px;
+        background-color: #fff;
+        border-radius: 1rem;
+        transition: 0.5s;
+        overflow: hidden;
+        /* 이미지가 박스 밖으로 나가지 않게 가림 */
+     }
+     .con01 img{
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+        transition: 0.5s;
+     }
+      .con01 li div {
+        padding: 2rem;
+    }
+    .con01 li:hover {
+        transform: translateY(-50px);
+    }
+   
+
+      /* 마우스 올렸을 때 이미지 확대 */
+      .con01 li:hover img {
+        transform: scale(1.1); /* 1.1배 확대 */
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <section class="con01">
+      <div class="txt">
+        <p>OUR</p>
+        <p>ARCHIVE</p>
+      </div>
+      <ul class="archive">
+        <li><img src="img/Kakao.png">
+            <div>
+              <p>2025-09-23</p>
+              <h2>if(kakao) 2025 컨퍼런스</h2>
+            </div>
+          </a>
+        </li>
+        <li><img src="img/Kakao.png">
+            <div>
+              <p>2025-09-23</p>
+              <h2>if(kakao) 2025 컨퍼런스</h2>
+            </div>
+          </a>
+        </li>
+        <li><img src="img/Kakao.png">
+            <div>
+              <p>2025-09-23</p>
+              <h2>if(kakao) 2025 컨퍼런스</h2>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>

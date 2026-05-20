@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>논리연산자</title>
+  </head>
+  <body>
+    <script>
+      let result = 2 < 3; //true
+      let result2 = 30 > 50; //false
+      let result3 = 30 < 50; //true
+      let result4 = 2 > 3; //false
+      console.log(result, result2);
+
+      document.write(`${result && result2} <br>`);
+      document.write(`${result && result3} <br>`);
+      document.write(`${result || result2} <br>`);
+      document.write(`${result2 || result3} <br>`);
+      document.write(`${result2 || result4} <br>`);
+      document.write(`${!result} <br>`);
+    </script>
+  </body>
+  <!-- 
+&& :: and 연산자(그리고). 둘 다 참이면 결과값이 참이 나옴 나머지는 것짓
+|| :: or 연산자(또는) 둘 다 거짓이면 거짓이 나옴.  나머지는 참.
+! :: not 연산자.  무조건 반대로 나옴.  참이면 거짓으로 나오고, 거짓이면 참으로 나옴
+
+document.write(`${result && result2} <br>`); =>false나옴
+document.write(`${result || result2} <br>`); =>true 나옴
+ -->
+</html>

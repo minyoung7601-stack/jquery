@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습eq이용</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap {
+        width: 300px;
+        overflow: hidden;
+        border: 1px solid red;
+        margin: 50px auto;
+      }
+      ul {
+        width: 900px;
+        display: flex;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul>
+        <li>
+          <img src="img/pic1.jpg" />
+        </li>
+        <li>
+          <img src="img/pic2.jpg" />
+        </li>
+        <li>
+          <img src="img/pic3.jpg" />
+        </li>
+      </ul>
+    </div>
+    <!-- <script>
+      $("li:nth-child(1)").on("click", function () {
+        $("ul").animate({ "margin-left": "-300px" });
+      });
+      $("li:nth-child(2)").on("click", function () {
+        $("ul").animate({ "margin-left": "-600px" });
+      });
+      $("li:nth-child(3)").on("click", function () {
+        $("ul").animate({ "margin-left": "0px" });
+      });
+    </script> -->
+
+    <!-- <script>
+      $("li").on("click", function () {
+        let i = $(this).index();
+        console.log(i);
+
+        $("ul").animate({ "margin-left": -300 * (i + 1) + "px" });
+      });
+    </script> -->
+
+    <!-- <script>
+      $("li").on("click", function () {
+        let i = $(this).index();
+        console.log(i);
+
+        // 만약 클릭한 번호(i)가 2번(마지막)이라면?
+        if (i === 2) {
+          // 처음 위치(0px)로 돌아가라
+          $("ul").animate({ "margin-left": "0px" });
+        }
+        // 그게 아니라면(0번이나 1번이라면)?
+        else {
+          // 원래 하던 대로 다음 칸으로 움직여라
+          $("ul").animate({ "margin-left": -300 * (i + 1) + "px" });
+        }
+      }); -->
+    <!-- </script> -->
+    <script>
+      $("li").on("click", function () {
+        let i = $(this).index();
+        console.log(i);
+
+        if (i == 2) {
+          $("ul").animate({ "margin-left": "0px" });
+        } else {
+          $("ul").animate({ "margin-left": -300 * (i + 1) + "px" });
+        }
+      });
+
+      for (let i = 0; i <= 2; i++) {
+        $("li")
+          .eq(i)
+          .on("click", function () {
+            // console.log(i);
+            if (i == 2) {
+              $("ul").animate({ "margin-left": "0px" });
+            } else {
+              $("ul").animate({ "margin-left": -300 * (i + 1) + "px" });
+            }
+          });
+      }
+    </script>
+  </body>
+</html>
+
+<!-- 문제) for문을 이용. 리스트(li)를 클릭하면 슬라이드를 이동시키되, 마지막(2번)을 클릭하면 처음으로 되돌려라-->

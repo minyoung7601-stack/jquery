@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display:flex, flex:0 0 80%</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      ul {
+        display: flex;
+        /* 너비값을 알아서 80, 20으로 계산 */
+        gap: 1rem;
+        width: 1200px;
+        margin: 0 auto;
+        background-color: #ccc;
+      }
+      li {
+        border: 1px solid red;
+        width: calc((100% - 1rem) / 2);
+      }
+      /* li:first-child {
+        width: 80%;
+      }
+      li:nth-child(2) {
+        width: 20%;
+      } */
+
+      .on {
+        /* width: 80%; */
+        flex: 0 0 80%;
+        /* flex-grow :: 공간이 남았을때 늘어나거나(1) 늘어나지않게(0)
+        flex-shrink :: 공간이 부족할때 줄어들거나(1) 줄어들지않게(0)
+        flex-basis ::  크기
+        flex : grow shrink basis */
+      }
+      /* on에게 너비 80을 제이쿼리에서 주기위해 미리 클래스명 정함 */
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <img src="img/pic1.jpg" />
+      </li>
+      <li>
+        <img src="img/bgSquare.png" />
+      </li>
+    </ul>
+    <script>
+      $("li").on("mouseenter", function () {
+        $(this).addClass("on");
+      });
+      $("li").on("mouseleave", function () {
+        $("li").removeClass("on");
+      });
+    </script>
+  </body>
+</html>

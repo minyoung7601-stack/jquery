@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      ul {
+        display: flex;
+        width: 95%;
+        margin: 0px auto;
+        gap: 1rem;
+      }
+      li {
+        width: calc((100% - 1rem) / 2);
+        height: 500px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        color: #fff;
+        border-radius: 1rem;
+        transition: 0.5s;
+      }
+      .comp01 {
+        background-image: url(img/samsung1.jpg);
+      }
+      .comp02 {
+        background-image: url(img/samsung2.png);
+      }
+      li div {
+        position: absolute;
+        left: 100px;
+        bottom: 70px;
+      }
+      li p {
+        margin: 1rem 0px 2rem;
+      }
+      a {
+        border: 1px solid #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+      li::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 1rem;
+      }
+      .on {
+        width: 80%;
+      }
+      .active {
+        color: #000;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="comp01">
+        <div>
+          <h2>회사소개</h2>
+          <p>
+            삼성에피스홀딩스는 투명하고 효율적인 경영을 통해 바이오의약품 시장을
+            선도하겠습니다.
+          </p>
+          <a href="#"
+            ><span>자세히 보기</span>
+            <i class="fa-solid fa-arrow-right-long"></i
+          ></a>
+        </div>
+      </li>
+      <li class="comp02">
+        <div>
+          <h2>자회사소개</h2>
+          <p>
+            삼성에피스홀딩스는 삼성바이오에피스와 에피스넥스랩을 자회사로
+            보유하고 있습니다.
+          </p>
+          <a href="#"
+            ><span>자세히 보기</span>
+            <i class="fa-solid fa-arrow-right-long"></i
+          ></a>
+        </div>
+      </li>
+    </ul>
+    <script>
+      $("li").on("mouseenter", function () {
+        $(this).addClass("on");
+        $(this).find("a").addClass("active");
+      });
+      $("li").on("mouseleave", function () {
+        $("li").removeClass("on");
+        $("li a").removeClass("active");
+      });
+    </script>
+  </body>
+</html>

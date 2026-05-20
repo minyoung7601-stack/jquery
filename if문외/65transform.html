@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>64color</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/egjs-jquery-transform/2.0.0/transform.min.js"
+      integrity="sha512-vOc3jz0QulHRiyMXfp676lHxeSuzUhfuw//VUX12odAmlUbnKiXH4GQxBRqwKhF3Mkswqr5ILY9MtEM4ZwcS2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div>박스</div>
+
+    <script>
+      // $("div").on("click", () => {
+      //   $("div").css({ transform: "translateX(300px)" });
+      // });
+
+      $("div").on("click", () => {
+        $("div").animate({ transform: "translateX(300px)" });
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+animate로 transform 가능하게 하려면
+
+jquery 연결하고
+jquery-transform에 해당하는 cdn을 연결시킴
+
+jquery 4.0.0 버전은 베타버전이라서 transform이 안됨
+jquery 3.7.1을 연결시키면 됨
+
+-->

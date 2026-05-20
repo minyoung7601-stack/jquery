@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>대입연산자</title>
+  </head>
+  <body>
+    <script>
+      let num = 5;
+      document.write(
+        "num변수에 3을 더해서 num변수에 넣으면" + (num += 3) + "<br>",
+      );
+      document.write(
+        "num변수에 3을 빼서 num변수에 넣으면" + (num -= 3) + "<br>",
+      );
+      document.write(
+        `num변수에 3을 곱해서 num 변수에 넣으면 ${(num *= 3)} <br>`,
+      );
+    </script>
+  </body>
+</html>
+<!-- 
+대입연산자 :: 연산을 한 후 대입을 시키겠다 라는 의미
+num = num + 1 ==> num += 1 
+num = num - 1 ==> num -= 1 
+num = num * 1 ==> num *= 1 
+num = num / 1 ==> num /= 1 
+num = num % 1 ==> num %= 1 
+
+문자를 쓸때 "" + 이런 부분이 불편함
+그래서 나온게 키보드의 TAB키 위에 있는 `(백틱)쓰고
+'문자 ${변수}'
+
+
+-->
