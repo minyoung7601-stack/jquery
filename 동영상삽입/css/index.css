@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: url(../img/bg.jpg) no-repeat center/cover;
+  position: relative;
+  overflow: hidden;
+}
+/* 왼쪽 로고 및 타이틀 영역 */
+.left {
+  width: 30%;
+  height: 100%;
+}
+.left h1 {
+  position: absolute;
+  left: 100px;
+  top: 200px;
+  text-align: center;
+}
+.left h1 strong {
+  display: block;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+}
+
+.left h1 img {
+  display: block;
+}
+.left .txt {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 100px;
+  top: 400px;
+}
+.left .txt span {
+  color: #6e512d;
+}
+
+/* 오른쪽 비디오 리스트 영역 */
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right li {
+  /* width: calc(100% / 4); */
+  width: 15%;
+  color: #fff;
+  background: url(../img/divider.png) no-repeat left center;
+  position: relative;
+}
+.right video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* opacity: 0; */
+}
+.right h2 {
+  position: absolute;
+  left: 10px;
+  top: 30%;
+  color: #64492b;
+}
+.right h3 {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  font-weight: normal;
+  opacity: 0;
+}
+.right p {
+  position: absolute;
+  right: -100px;
+  bottom: 100px;
+  text-align: right;
+  opacity: 0;
+}
+/*footer*/
+#footer {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  color: #ccc;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  color: #fff;
+  z-index: 10;
+}
+#footer > ul {
+  display: flex;
+  gap: 1.5rem;
+}
