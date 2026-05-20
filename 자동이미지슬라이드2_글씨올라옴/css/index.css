@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* #slider */
+#slider {
+  width: 300px;
+  margin: 50 auto;
+  /* border: 1px solid red; 영역확인 */
+  position: relative;
+  /* overflow: hidden; */
+}
+
+/* .panel */
+.panel {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.panel li {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+}
+
+/* 글자 스타일 및 초기 위치 설정 */
+.panel li p {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8; /* 처음엔 안 보이게 */
+  font-size: 2.5rem;
+  color: #000;
+}
+
+.panel .bg1 {
+  background-image: url(../img/pic1.jpg);
+  display: block;
+}
+.panel .bg2 {
+  background-image: url(../img/pic2.jpg);
+  display: block;
+}
+.panel .bg3 {
+  background-image: url(../img/pic3.jpg);
+  display: block;
+}
+.panel .bg4 {
+  background-image: url(../img/pic4.jpg);
+  display: block;
+}
+/* 좌우 버튼 네비게이션 */
+.navi {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.navi > li {
+  color: #000;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 20px;
+}
+/* .navi .prev {
+  left: 1rem;
+}
+.navi .next {
+  right: 1rem;
+} */
