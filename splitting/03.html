@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03rotate</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/splitting/dist/splitting-cells.css"
+    />
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  </head>
+  <style>
+    .hello .char {
+      display: inline-block;
+      animation: up 1s;
+      animation-delay: calc(0.05s * var(--char-index));
+    }
+    @keyframes up {
+      0% {
+        transform: rotate(180deg) scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+  <body>
+    <div data-splitting class="hello">Hello</div>
+    <script>
+      Splitting();
+    </script>
+  </body>
+</html>
+<!-- 
+이용순서
+1. https://splitting.js.org/
+2. Get Splitting클릭
+3. 움직이고 싶은 곳에  <h1 data-splitting>Split by chars (default)</h1>
+4. <script> Splitting(); </script>
+5. <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script> 
+
+Splitting.js는 텍스트, 이미지, 그리드 등을 낱개(글자, 단어, 행 등)로 분리하여 CSS 변수(Custom Properties)를 제어할 수 있게 해주는 경량 JavaScript 라이브러리
+-->
